@@ -1,16 +1,22 @@
+
 export default function HeadingComponent() {
-return (
-    <div>
-        <h1 id='heading'>Our Food Menu Application</h1>
-    <hr id='hrLine'/>
-    <h2 style={
-    {
-        textAlign: 'center',
-        color: 'blue'
-    }
-    }>Our Menu</h2>
-    <hr id='hrLine'/>
-    <p className='para'>Authentic Italian Cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious</p>
-    </div>
-)
+    return (
+        <div className="header">
+
+            <h1 id='heading'>🍴 Food Menu Application</h1>
+
+            <p id='subHeading'>
+                Premium Taste • Fresh Ingredients • Fast Delivery
+            </p>
+
+            <hr id='hrLine' />
+
+            <p className='para'>
+                Discover our delicious collection of freshly prepared meals.
+                From spicy traditional dishes to cheesy fast food favorites,
+                everything is cooked with love and premium quality ingredients.
+            </p>
+
+        </div>
+    )
 }

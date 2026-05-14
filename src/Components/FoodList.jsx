@@ -1,3 +1,4 @@
+
 export default function FoodList() {
 
 const dummyData = [
@@ -24,7 +25,8 @@ const dummyData = [
     img: "/src/assets/img4.jpg",
     paragraph: "Creamy white sauce pasta",
     quantity: 4
-},{
+},
+{
     title: "Karahi",
     img: "/src/assets/img5.jpg",
     paragraph: "Spicy chicken karahi full of flavor",
@@ -64,22 +66,64 @@ const dummyData = [
 
 return (
     <ul id='foodlist'>
+
     {
-        dummyData.map(function(foodItem, index) {
+        dummyData.map((foodItem, index) => {
+
         return (
-            <li key={index}>
+
+            <li className='foodCard' key={index}>
+
             <div id='imgArea'>
-                <img src={foodItem.img} alt="" />
+
+                <img src={foodItem.img} alt={foodItem.title} />
+
+                {
+                    foodItem.quantity >= 10 &&
+                    <span className='offerTag'>
+                        Popular
+                    </span>
+                }
+
             </div>
-            <div>
+
+            <div className='foodContent'>
+
                 <h4>{foodItem.title}</h4>
+
                 <p>{foodItem.paragraph}</p>
-                <p className= 'quantity'>{foodItem.quantity == 0 ? 'Sold Out' : `Quantity: ${foodItem.quantity}`} {foodItem.quantity >= 20 ? "Buy 1 Get 1 Free" : ""}</p>
+
+                <p className='quantity'>
+
+                {
+                    foodItem.quantity === 0
+                    ? "Sold Out"
+                    : `Available Quantity: ${foodItem.quantity}`
+                }
+
+                </p>
+
+                <div className='cardBtns'>
+
+                    <button className='orderBtn'>
+                        Order Now
+                    </button>
+
+                    <button className='detailsBtn'>
+                        Details
+                    </button>
+
+                </div>
+
             </div>
+
             </li>
+
         )
+
         })
     }
+
     </ul>
 )
 }
